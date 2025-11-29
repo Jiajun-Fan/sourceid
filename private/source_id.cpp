@@ -4,7 +4,6 @@ class SourceDB {
  public:
     static constexpr const char* k_Internal = "<Internal>";
     SourceDB() : m_Current{0, 1},
-                 m_CurFile{0},
                  m_FileVec{ k_Internal },
                  m_FileIndex{{k_Internal, 0}},
                  m_SegVec{{0, 0, 1}},
@@ -113,7 +112,6 @@ class SourceDB {
 
  private:
     SourceID                                m_Current;
-    size_t                                  m_CurFile;
     std::vector<std::string>                m_FileVec;
     std::unordered_map<std::string, size_t> m_FileIndex;
     std::vector<SegInfo>                    m_SegVec;
